@@ -1,0 +1,47 @@
+---
+# configs/damped_magnetic.yaml
+SIM:
+  N_SAMPLES: 8000
+  DT: 0.001
+  T_FINAL: 10.0
+  OMEGA_SCALE: 0.3
+  OUTPUT_DIR: "./variable_inertia/"
+
+BODY:
+  MOI_DISTRIBUTIONS:
+    - BASE: [1.0, 2.0, 3.0]
+      NOISE: 0.1
+    - BASE: [3.0, 1.0, 2.0]
+      NOISE: 0.3
+    - BASE: [4.0, 2.0, 1.0]
+      NOISE: 0.1
+    - BASE: [2.0, 6.0, 1.0]
+      NOISE: 0.2
+  VARIABLE_INERTIA: True
+  INERTIA_NOISE: 0.1
+
+SCENARIOS:
+  MAGNETIC:
+    ENABLED: true
+    B_FIELD: [-0.10, 0.0, 0.15]
+    MAGNETIC_MOMENT: [1, 0, 0]
+  DAMPED:
+    ENABLED: true
+    DAMPING_MATRIX: [[-0.2, 0.0, 0.0],
+                     [0.0, -0.2, 0.0],
+                     [0.0, 0.0, -0.2]]
+  DAMPED_MAGNETIC:
+    ENABLED: true
+    WEIGHTS: [1.0, 0.5]
+  ## acceleration
+  CONSTANT_ACC:
+    ENABLED: true
+    ACCELERATION: [0.15, 0.0, -0.05]
+  LINEAR_ACC:
+    ENABLED: true
+    A_MATRIX: [[-0.2, 0.1, 0.0],
+               [-0.1, -0.2, 0.0],
+               [0.0, 0.0, -0.15]]
+    BIAS: [0.02, 0.0, -0.02]
+  FREE_ROTATION:
+    ENABLED: True

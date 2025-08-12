@@ -1,0 +1,31 @@
+# SO(3) Neural CDE Second-Order Configuration
+# This configuration enables second-order dynamics with two separate neural networks
+# Implementation matches PyTorch exactly: z1*xd1 + z2*xd2 via custom ODE function
+
+# Data configuration
+DATA:
+  PATH: "../data/free_rotation/rigid_body_FREE_ROTATION.pt"
+
+# Model configuration
+MODEL:
+  TYPE: "SO3NeuralCDE"
+  INPUT_CHANNEL: 9              # 9D rotation matrices (flattened 3x3)
+  LATENT_DIM: 100
+  MLP_WIDTH: 50
+  OUTPUT_CHANNEL: 6             # 6D output with GSO to recover 9D
+  USE_RECONSTRUCTION: True      # Enable reconstruction task
+  
+  INTERPOLATION_METHOD: "savitzky_golay"
+  ODE_METHOD: "dopri5"             # Options: "tsit5", "dopri5", "euler"
+  ATOL: 1e-4                       # Absolute tolerance for ODE solver
+  RTOL: 1e-4                       # Relative tolerance for ODE solver
+  MAX_STEPS: 8192                  # Maximum number of solver steps
+
+  # Savitzky-Golay specific parameters
+  SG_LEARNABLE_WEIGHTS: True
+  SG_POLYNOMIAL_ORDER: 2  # Higher order for better derivative estimation
+  SECOND_ORDER: True  # Enable dual neural networks for velocity + acceleration
+
+  # Tolerance scheduling (adaptive precision during training)
+  TOLERANCE_SCHEDULING:
+    ENABLE: True                       # Enable tolerance scheduling for faster early training

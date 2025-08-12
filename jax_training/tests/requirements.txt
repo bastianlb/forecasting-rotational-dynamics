@@ -1,0 +1,10 @@
+# Testing requirements
+pytest>=7.0.0
+pytest-xdist  # For parallel test execution
+pytest-cov    # For coverage reports
+
+# Core dependencies (should already be installed)
+jax
+flax
+diffrax
+equinox

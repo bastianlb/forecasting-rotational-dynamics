@@ -1,0 +1,32 @@
+# SO(3) Neural CDE Configuration
+# Configuration for SO(3) Neural Controlled Differential Equation model
+# Based on diffrax/JAX implementation with multiple interpolation methods
+
+# Data configuration
+
+# Model configuration - SO(3) Neural CDE specific
+MODEL:
+  TYPE: "SO3NeuralCDE"
+  INPUT_CHANNEL: 9              # 9D rotation matrices (flattened 3x3)
+  LATENT_DIM: 100
+  MLP_WIDTH: 50
+  OUTPUT_CHANNEL: 6             # 6D output with GSO to recover 9D
+  USE_RECONSTRUCTION: True      # Enable reconstruction task
+  
+  # CDE-specific parameters
+  INTERPOLATION_METHOD: "savitzky_golay"  # Options: "hermite", "linear", "savitzky_golay", "sg"
+  ODE_METHOD: "dopri5"             # Options: "tsit5", "dopri5", "euler"
+  ATOL: 1e-4                       # Absolute tolerance for ODE solver
+  RTOL: 1e-4                       # Relative tolerance for ODE solver
+  MAX_STEPS: 8192                  # Maximum number of solver steps
+
+  # Tolerance scheduling (adaptive precision during training)
+  TOLERANCE_SCHEDULING:
+    ENABLE: True                       # Enable tolerance scheduling for faster early training
+  
+  # Savitzky-Golay specific parameters
+  SG_LEARNABLE_WEIGHTS: False # Whether to use learnable weights in SG filter
+  SG_POLYNOMIAL_ORDER: 2          # Polynomial order for SG filter
+
+OUTPUT:
+  WANDB_PROJECT: "rot_dyn_jax"

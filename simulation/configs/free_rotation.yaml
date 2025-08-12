@@ -1,0 +1,10 @@
+SIM:
+  N_SAMPLES: 8000
+  DT: 0.001
+  T_FINAL: 10.0
+  OMEGA_SCALE: 0.3
+  OUTPUT_DIR: "./free_rotation"
+
+SCENARIOS:
+  FREE_ROTATION:
+    ENABLED: True

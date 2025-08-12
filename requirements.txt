@@ -1,0 +1,36 @@
+# JAX/Flax dependencies
+jax[cuda]>=0.4.25  # JAX with CUDA support for NVIDIA GPUs
+flax>=0.8.0  # Flax with nnx API support
+diffrax>=0.4.0  # Differential equation solving in JAX
+
+# PyTorch (for data loading and some utilities)
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Configuration management
+yacs>=0.1.8
+
+# Scientific computing
+numpy>=1.24.0,<2.0.0
+scipy>=1.10.0
+pandas>=2.0.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Experiment tracking
+wandb>=0.15.0
+
+# Rigid body dynamics and rotation utilities
+roma>=1.4.0  # Rotation utilities
+torchdiffeq>=0.2.3  # ODE solving for PyTorch
+
+# Additional utilities
+tqdm>=4.65.0
+pyyaml>=6.0
+pathlib2>=2.3.7  # Enhanced pathlib functionality
+
+# Development tools (optional)
+jupyter>=1.0.0
+ipython>=8.0.0

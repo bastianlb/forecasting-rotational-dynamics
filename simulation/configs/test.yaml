@@ -1,0 +1,28 @@
+---
+# configs/damped_magnetic.yaml
+SIM:
+  N_SAMPLES: 150
+  DT: 0.001
+  T_FINAL: 8.0
+  OMEGA_SCALE: 0.4
+  OUTPUT_DIR: "./data/test_data"
+
+BODY:
+  MOMENT_OF_INERTIA: [0.15, 0.25, 0.35]
+
+SCENARIOS:
+  FREE_ROTATION:
+    ENABLED: false
+  MAGNETIC:
+    ENABLED: false
+    B_FIELD: [0.0, 0.0, 2.0]
+  RESTORING:
+    ENABLED: false
+  DAMPED:
+    ENABLED: true
+    DAMPING_MATRIX: [[-0.2, 0.0, 0.0],
+                     [0.0, -0.2, 0.0],
+                     [0.0, 0.0, -0.2]]
+  DAMPED_MAGNETIC:
+    ENABLED: true
+    WEIGHTS: [1.5, 0.8]

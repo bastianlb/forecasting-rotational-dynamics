@@ -1,0 +1,21 @@
+# configs/acceleration_scenarios.yaml
+SIM:
+  N_SAMPLES: 8000
+  DT: 0.001
+  T_FINAL: 10.0
+  OMEGA_SCALE: 0.20
+  OUTPUT_DIR: "./acceleration/"
+
+BODY:
+  MOMENT_OF_INERTIA: [0.12, 0.22, 0.32]
+
+SCENARIOS:
+  CONSTANT_ACC:
+    ENABLED: true
+    ACCELERATION: [0.15, 0.0, -0.05]
+  LINEAR_ACC:
+    ENABLED: true
+    A_MATRIX: [[-0.2, 0.1, 0.0],
+               [-0.1, -0.2, 0.0],
+               [0.0, 0.0, -0.15]]
+    BIAS: [0.02, 0.0, -0.02]

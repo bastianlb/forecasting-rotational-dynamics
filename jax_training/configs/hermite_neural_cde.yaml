@@ -1,0 +1,30 @@
+# Hermite Neural CDE Configuration
+# Optimized for Hermite spline interpolation with higher solver tolerances
+
+# Model configuration - Hermite-specific
+MODEL:
+  TYPE: "SO3NeuralCDE"
+  INPUT_CHANNEL: 9              # 9D rotation matrices
+  LATENT_DIM: 32                # CDE hidden state dimension (renamed from LATENT_CHANNELS)
+  MLP_WIDTH: 64                 # Bottleneck dimension for CDEFunc (renamed from HIDDEN_SIZE)
+  OUTPUT_CHANNEL: 6             # 6D output with GSO to recover 9D (updated from 9)
+  USE_RECONSTRUCTION: True      # Enable reconstruction task
+  
+  # Hermite-specific CDE parameters
+  INTERPOLATION_METHOD: "hermite"
+  ODE_METHOD: "dopri5"          # Dopri5 typically works well with hermite
+  ATOL: 1e-4                    # Tighter tolerances for hermite
+  RTOL: 1e-4                    # Tighter tolerances for hermite
+  MAX_STEPS: 131072            # Higher steps for complex hermite splines
+
+# Training parameters - conservative for hermite
+TRAIN:
+  LEARNING_RATE: 0.0005
+  WEIGHT_DECAY: 0.001
+  
+# Data parameters - smaller batches for memory efficiency
+DATA:
+  BATCH_SIZE: 128               # Smaller batches for hermite memory requirements
+
+OUTPUT:
+  WANDB_PROJECT: "so3_neural_cde_hermite"

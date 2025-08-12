@@ -1,0 +1,16 @@
+# GRU-RNN Configuration
+# Based on empirical findings - optimal hidden size is 256, with regularizations
+
+MODEL:
+  USE_TIME_CONDITIONING: true
+  NUM_LAYERS: 4                    # Use deeper networks
+  LATENT_DIM: 400                  # Mid-to-high range (renamed from HIDDEN_SIZE)
+  DROPOUT: 0.20                    # Higher regularization
+
+TRAIN:
+  LEARNING_RATE: 0.004
+  WEIGHT_DECAY: 0.0003
+  GRADIENT_CLIP_VAL: 2.5
+
+DATA:
+  BATCH_SIZE: 256
