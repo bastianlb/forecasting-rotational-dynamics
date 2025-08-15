@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Forecasting Continuous Non-Conservative Dynamical Systems in SO(3)">
+  <meta name="keywords" content="Computer Vision, 3D Rotation, Neural ODEs, Dynamical Systems, ICCV 2025">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forecasting Continuous Non-Conservative Dynamical Systems in SO(3)</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  
+  <!-- MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    }
+  };
+  </script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Forecasting Continuous Non-Conservative Dynamical Systems in SO(3)</h1>
+          <div class="authors-with-photos">
+            <div class="author-block-with-photo">
+              <a href="https://bastianlb.github.io/" target="_blank" class="author-link">
+                <img src="./images/authors/lennart.jpg" alt="Lennart Bastian" class="author-photo-above">
+              </a>
+              <span class="author-name-below">
+                <a href="https://bastianlb.github.io/" target="_blank">Lennart Bastian</a><sup>1,2*</sup>
+              </span>
+            </div>
+            <div class="author-block-with-photo">
+              <a href="https://www.linkedin.com/in/mohammad-rashed-21a4881a5/?originalSubdomain=de" target="_blank" class="author-link">
+                <img src="./images/authors/mohammad.jpg" alt="Mohammad Rashed" class="author-photo-above">
+              </a>
+              <span class="author-name-below">
+                <a href="https://www.linkedin.com/in/mohammad-rashed-21a4881a5/?originalSubdomain=de" target="_blank">Mohammad Rashed</a><sup>1,2*</sup>
+              </span>
+            </div>
+            <div class="author-block-with-photo">
+              <a href="https://www.professoren.tum.de/en/navab-nassir/" target="_blank" class="author-link">
+                <img src="./images/authors/nassir.jpg" alt="Nassir Navab" class="author-photo-above">
+              </a>
+              <span class="author-name-below">
+                <a href="https://www.professoren.tum.de/en/navab-nassir/" target="_blank">Nassir Navab</a><sup>1,2</sup>
+              </span>
+            </div>
+            <div class="author-block-with-photo">
+              <a href="https://tolgabirdal.github.io/" target="_blank" class="author-link">
+                <img src="./images/authors/tolga.jpg" alt="Tolga Birdal" class="author-photo-above">
+              </a>
+              <span class="author-name-below">
+                <a href="https://tolgabirdal.github.io/" target="_blank">Tolga Birdal</a><sup>3</sup>
+              </span>
+            </div>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <div class="author-affiliation">
+              <span class="affiliation-block"><sup>1</sup>Technical University of Munich</span>
+              <span class="affiliation-block"><sup>2</sup>Munich Center of Machine Learning</span>
+              <span class="affiliation-block"><sup>3</sup>Imperial College London</span>
+            </div>
+          </div>
+
+          <div class="is-size-7 publication-authors">
+            <span class="equal-contribution"><sup>*</sup>Equal Contribution</span>
+          </div>
+
+          <div class="publication-venue">
+            <span class="venue-block">
+              <strong>ICCV 2025</strong> 
+              <span class="oral-highlight">Oral</span>
+              <img src="./images/iccv_2025.png" alt="ICCV" class="venue-logo">
+            </span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link -->
+              <span class="link-block">
+                <a href="./images/bastian2025rotdyn.pdf" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- arXiv Link -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2508.07775" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link -->
+              <span class="link-block">
+                <a href="https://github.com/bastianlb/forecasting-rotational-dynamics" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <img src="./images/teaser_figure.jpg" alt="Teaser Figure - Rotation Predictions from Pose Network vs SG-nCDE Extrapolation" class="teaser-image">
+          <h2 class="subtitle has-text-centered">
+          We propose <strong>Savitzky-Golay Neural Controlled Differential Equations</strong> for SO(3) forecasting, a fundamental task at the intersection of tracking and object pose estimation.
+          Real-world rotational observations can be occluded or otherwise errant.
+          Above, pose predictions (bottom left) are input into an SG-nCDE, which robustly compensates for missed detections of a rotational object trajectory (green predictions, bottom right).
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Modeling the rotation of moving objects is a fundamental task in computer vision, 
+            yet SO(3) extrapolation still presents numerous challenges: <strong>(1)</strong> unknown quantities 
+            such as the moment of inertia complicate dynamics, <strong>(2)</strong> the presence of external 
+            forces and torques can lead to non-conservative kinematics, and <strong>(3)</strong> estimating 
+            evolving state trajectories under sparse, noisy observations requires robustness.
+          </p>
+          <p>
+            We propose modeling trajectories of noisy pose estimates on the manifold of 3D 
+            rotations in a <em>physically and geometrically meaningful way </em> by leveraging <strong>Neural 
+            Controlled Differential Equations</strong> guided with <strong>SO(3) Savitzky-Golay</strong> paths.
+          </p>
+          <p>
+            Existing extrapolation methods often rely on energy conservation or constant velocity 
+            assumptions, limiting their applicability in real-world scenarios involving 
+            non-conservative forces. In contrast, <strong>our approach is agnostic to energy and momentum 
+            conservation while being robust to input noise</strong>, making it applicable to complex, 
+            non-inertial systems. Our approach is easily integrated as a module in existing 
+            pipelines and generalizes well to trajectories with unknown physical parameters.
+          </p>
+          <p>
+            By learning to approximate object dynamics from noisy states during training, our 
+            model attains robust extrapolation capabilities in simulation and various real-world settings.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract -->
+
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <p>
+            We consider the problem of <strong>forecasting the rotational motion of a rigid body with unknown physical properties</strong> from noisy sensor estimates in SO(3). The core of our proposed method is a <strong>neural controlled differential equation</strong>, which learns a latent representation of the underlying dynamical system with respect to a robust control path effectively handling noisy measurements.
+          </p>
+          
+          <p>
+            We construct this <strong>control path directly on the manifold SO(3)</strong> by filtering noisy input observations with a Savitzky-Golay filter. This allows the CDE to learn a more robust parameterization for extrapolating rigid-body trajectory estimates than existing methods.
+          </p>
+
+          <div class="method-overview">
+            <img src="./images/main_figure.jpg" alt="Continuous Dynamics Extrapolation on SO(3)" class="method-image">
+          </div>
+
+          <h3 class="title is-4">Core Innovation</h3>
+          <p>
+            <strong>SO(3) Savitzky-Golay Neural CDEs:</strong> previous approaches rely on energy conservation or constant velocity assumptions. Our method can predict rotational object trajectories in various physical scenarios, including dissipative forces and objects under external conservative force fields. We design an integration control signal on the Lie group SO(3) to simultaneously handle denoising input states and serve as a numerical integration path for a CDE.
+          </p>
+          
+          <p>
+            The Savitzky-Golay filter on SO(3) constructs a polynomial with global support in the Lie algebra, solvable as a single least squares problem, providing a geometrically meaningful control path that respects the manifold structure while being robust to sensor noise.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            Our method robustly forecasts object rotations across diverse scenarios with noise and non-conservative forces, outperforming traditional approaches when tracking fails.
+          </p>
+        </div>
+        <div class="columns is-centered">
+          <div class="column">
+            <img src="./images/qualitative_results.jpg" alt="Qualitative results showing rotation forecasting performance" class="results-image">
+            <p class="has-text-centered" style="margin-top: 10px; font-size: 0.9rem; color: #666;">
+              <strong>Qualitative Comparison:</strong> Our method maintains better alignment of box rotations on the <em>Oxford MultiMotion Dataset </em>than baseline methods, whose predicted rotations cause the projected coordinate system to drift significantly over time. Object poses are represented in world coordinates so that errors manifest as translations in pixel space.
+            </p>
+          </div>
+        </div>
+        <div class="columns is-centered">
+          <div class="column">
+            <img src="./images/hypersphere_trajectories.jpg" alt="Trajectory comparisons on SO(3) hypersphere showing our method vs baselines" class="results-image">
+            <p class="has-text-centered" style="margin-top: 10px; font-size: 0.9rem; color: #666;">
+              <strong>SO(3) Trajectory Comparisons</strong> show rotational trajectories projected onto the unit sphere. The black dots represent noisy input observations from which the underlying physics are learned. Our method (<span style="color: #1f77b4; font-weight: bold;">blue</span>) closely follows ground truth (<span style="color: #17becf; font-weight: bold;">cyan</span>) trajectories on the rotation manifold, outperforming baseline methods across different scenarios.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{bastian2025forecasting,
+  title={Forecasting Continuous Non-Conservative Dynamical Systems in SO(3)},
+  author={Bastian, Lennart and Rashed, Mohammad and Navab, Nassir and Birdal, Tolga},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  year={2025}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="./images/bastian2025rotdyn.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/bastianlb/forecasting-rotational-dynamics">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license" 
+            href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Website template borrowed from <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
