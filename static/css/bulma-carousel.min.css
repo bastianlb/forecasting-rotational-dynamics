@@ -1,0 +1,12 @@
+/* Minimal carousel styles */
+.carousel-container {
+  position: relative;
+}
+
+.carousel-item {
+  display: none;
+}
+
+.carousel-item.is-active {
+  display: block;
+}

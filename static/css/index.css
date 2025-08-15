@@ -1,0 +1,382 @@
+html {
+  font-family: 'Noto Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.footer .icon-link {
+    font-size: 25px;
+    color: #000;
+}
+
+.link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.teaser .hero-body .container {
+  max-width: 980px !important;
+}
+
+.publication-title {
+    font-family: 'Google Sans', sans-serif;
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.publication-authors {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors a {
+    color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+    color: hsl(204, 86%, 40%) !important;
+}
+
+.publication-venue {
+    font-family: 'Google Sans', sans-serif;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.venue-block {
+    display: inline-block;
+    font-size: 1.2rem;
+}
+
+.oral-highlight {
+    color: #d63031;
+    font-weight: 600;
+}
+
+.venue-logo {
+    height: 50px;
+    width: auto;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+
+.author-block {
+    display: inline-block;
+    margin: 0 15px 5px 0;
+    vertical-align: middle;
+}
+
+.authors-with-photos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.author-block-with-photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 140px;
+}
+
+.author-photo-above {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f0f0f0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    margin-bottom: 12px;
+    transition: transform 0.2s ease;
+}
+
+.author-photo-above:hover {
+    transform: scale(1.05);
+}
+
+.author-name-below {
+    font-size: 1rem;
+    font-family: 'Google Sans', sans-serif;
+}
+
+.author-name-below a {
+    color: hsl(204, 86%, 53%) !important;
+    text-decoration: none;
+}
+
+.author-name-below a:hover {
+    color: hsl(204, 86%, 40%) !important;
+}
+
+.author-link {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.author-link:hover .author-photo-above {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.author-affiliation {
+    margin-top: 10px;
+}
+
+.affiliation-block {
+    display: inline-block;
+    margin: 0 20px 5px 0;
+    color: #666;
+}
+
+.affiliation-block:last-child {
+    margin-right: 0;
+}
+
+.equal-contribution {
+    color: #666;
+    font-style: italic;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+.publication-links {
+  margin-top: 15px;
+}
+
+.teaser-image {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  margin: 0 auto 30px auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.method-image, .results-image {
+  width: 100%;
+  height: auto;
+  margin: 20px 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.publication-video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+
+    overflow: hidden;
+    border-radius: 10px !important;
+}
+
+.publication-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.publication-body img {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 0;
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+.interpolation-panel {
+  background: #f5f5f5;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.interpolation-panel .interpolation-header {
+  font-weight: 600;
+  color: #000;
+}
+
+.slider {
+  margin: 0 !important;
+}
+
+#interpolation-image-wrapper {
+  width: 100%;
+}
+#interpolation-image-wrapper img {
+  border-radius: 5px;
+}
+
+/* Custom styles for academic content */
+.content h2 {
+  color: #363636;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.content p {
+  margin-bottom: 1rem;
+}
+
+pre {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  padding: 1.25rem 1.5rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.button.is-dark {
+  background-color: #363636;
+  border-color: transparent;
+  color: #fff;
+}
+
+.button.is-dark:hover {
+  background-color: #292929;
+  border-color: transparent;
+  color: #fff;
+}
+
+/* Geometric explanation styling */
+.geometric-explanation {
+  background-color: #f0f8ff;
+  border-left: 4px solid #4a90e2;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.geometric-explanation h4 {
+  color: #2c3e50;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.geometric-explanation h4:first-child {
+  margin-top: 0;
+}
+
+/* SG Filter explanation styling */
+.sg-explanation {
+  background-color: #f8f9fa;
+  border-left: 4px solid #667eea;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.sg-explanation h4 {
+  color: #363636;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.sg-explanation h4:first-child {
+  margin-top: 0;
+}
+
+.sg-explanation .MathJax {
+  font-size: 1.1em !important;
+}
+
+/* Math styling */
+.MathJax_Display {
+  margin: 1em 0 !important;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  margin: 1em 0 !important;
+}
+
+/* Task challenges styling */
+.task-challenges {
+  margin: 30px 0;
+}
+
+.challenge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.challenge-item {
+  background-color: #fefefe;
+  border: 1px solid #e1e8ed;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.challenge-item h4 {
+  color: #c0392b;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.challenge-item p {
+  color: #555;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Task teaser figure styling */
+.teaser-figure {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.task-teaser-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+.teaser-caption {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
